@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/mgv8jke.css" />
+    <link rel="icon" type="image/png" href="logo/logo.svg" />
+    <title>LearnHub</title>
+  </head>
+  <body>
+    <main>
+      <div id="login-from">
+        <h1>Login</h1>
+        <form class="login">
+          <div class="login-input-group">
+            <div class="login-input-wrapper">
+              <input id="usernameLogin" class="contact-input-half" type="text" name="username" placeholder="Username" required />
+            </div>
+            <div class="login-input-wrapper">
+              <input id="passwordLogin" class="contact-input-half" type="password" name="password" placeholder="Password" required />
+            </div>
+          </div>
+          <div class="login-input-wrapper">
+            <input class="btn btn-primary btn-login contact-input-half" type="submit" value="Login" required />
+          </div>
+        </form>
+        <a href="register.html">Don't have an account? Register</a>
+      </div>
+    </main>
+    <script type="module">
+      import { createHeader } from "./Js/header.js";
+      const header = createHeader();
+      header.render();
+    </script>
+    <script src="Js/login.js"></script>
+  </body>
+</html>

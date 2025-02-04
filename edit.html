@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/mgv8jke.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link rel="icon" type="image/png" href="logo/logo.svg" />
+    <title>LearnHub</title>
+  </head>
+  <body>
+    <main>
+      <div class="create-container">
+        <h1>Edit content</h1>
+        <form id="createForm">
+          <div class="create-group">
+            <label for="Comment">Comment (280 characters maximum)</label>
+            <input id="text" type="text" name="Comment" />
+          </div>
+          <div class="create-group">
+            <label for="rating">Rating</label>
+            <span class="star-rating">
+              <label for="rate-1" style="--i: 1"><i class="fa-solid fa-star"></i></label>
+              <input type="radio" name="rating" id="rate-1" value="1" />
+              <label for="rate-2" style="--i: 2"><i class="fa-solid fa-star"></i></label>
+              <input type="radio" name="rating" id="rate-2" value="2" />
+              <label for="rate-3" style="--i: 3"><i class="fa-solid fa-star"></i></label>
+              <input type="radio" name="rating" id="rate-3" value="3" />
+              <label for="rate-4" style="--i: 4"><i class="fa-solid fa-star"></i></label>
+              <input type="radio" name="rating" id="rate-4" value="4" />
+              <label for="rate-5" style="--i: 5"><i class="fa-solid fa-star"></i></label>
+              <input type="radio" name="rating" id="rate-5" value="5" />
+            </span>
+          </div>
+          <div class="create-group">
+            <input type="submit" id="editForm" class="btn btn-primary" value="Edit" />
+          </div>
+        </form>
+      </div>
+    </main>
+    <script type="module">
+      import { createHeader } from "./Js/header.js";
+      const header = createHeader();
+      header.render();
+    </script>
+    <script src="Js/edit.js"></script>
+  </body>
+</html>

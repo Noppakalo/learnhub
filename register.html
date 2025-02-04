@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/mgv8jke.css" />
+    <link rel="icon" type="image/png" href="logo/logo.svg" />
+    <title>LearnHub</title>
+  </head>
+  <body>
+    <main>
+      <div id="login-from">
+        <h1>Register</h1>
+        <form class="login">
+          <div class="login-input-group">
+            <div class="login-input-wrapper">
+              <label for="username">Username</label>
+              <input id="usernameRegister" class="contact-input-half" type="text" name="username" required />
+            </div>
+            <div class="login-input-wrapper">
+              <label for="name">Your Name</label>
+              <input id="nameRegister" class="contact-input-half" type="text" name="text" required />
+            </div>
+            <div class="login-input-wrapper">
+              <label for="password">Password</label>
+              <input id="passwordRegister" class="contact-input-half" type="password" name="password" required />
+            </div>
+            <div class="login-input-wrapper">
+              <label for="password">Confirm Password</label>
+              <input id="confirmPassword" class="contact-input-half" type="password" name="password" required />
+            </div>
+            <div class="login-input-wrapper">
+              <input class="btn btn-primary btn-register" class="contact-input-half" type="submit" value="Login" required />
+            </div>
+          </div>
+        </form>
+        <a href="login.html">Already have an account? Login</a>
+      </div>
+    </main>
+    <script type="module">
+      import { createHeader } from "./Js/header.js";
+      const header = createHeader();
+      header.render();
+    </script>
+    <script src="Js/register.js"></script>
+  </body>
+</html>

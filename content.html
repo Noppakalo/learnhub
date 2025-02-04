@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/mgv8jke.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link rel="icon" type="image/png" href="logo/logo.svg" />
+    <title>LearnHub</title>
+  </head>
+  <body>
+    <main>
+      <section id="content-main">
+        <div id="loading-spinner" class="loader">
+          <div class="spinner"></div>
+        </div>
+      </section>
+    </main>
+    <script type="module">
+      import { createHeader } from "./Js/header.js";
+      const header = createHeader();
+      header.render();
+    </script>
+    <script src="Js/content.js"></script>
+  </body>
+</html>
