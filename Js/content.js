@@ -123,11 +123,45 @@ const renderContent = async () => {
         </div>`;
   };
 
+  const deleteContent = async () => {
+    try {
+      const contentId = getIdFromUrl();
+      const accessToken = localStorage.getItem("accessToken");
+
+      if (!contentId) {
+        alert("ไม่พบ ID ของคอนเทนต์");
+        return;
+      }
+
+      const confirmDelete = confirm("คุณแน่ใจหรือไม่ที่ต้องการลบคอนเทนต์นี้?");
+      if (!confirmDelete) return;
+
+      const response = await fetch(`https://api.learnhub.thanayut.in.th/content/${contentId}`, {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error("ไม่สามารถลบคอนเทนต์ได้");
+      }
+
+      alert("ลบคอนเทนต์สำเร็จ");
+      window.location.href = "index.html";
+    } catch (error) {
+      console.error("Error deleting content:", error);
+      alert("เกิดข้อผิดพลาดในการลบคอนเทนต์");
+    }
+  };
+
   try {
     spinner.classList.remove("hidden");
     const content = await fetchContent();
     section.innerHTML = itemContent(content);
-    const editcontent = document.querySelector(".content-edit");
+    const editContent = document.querySelector(".content-edit");
+    const deletebtn = document.querySelector(".content-delete");
     const accessToken = localStorage.getItem("accessToken");
 
     if (accessToken) {
@@ -142,10 +176,14 @@ const renderContent = async () => {
         if (userRes.ok) {
           const userData = await userRes.json();
           if (userData.id === content.postedBy.id) {
-            editcontent.innerHTML = `
+            editContent.innerHTML = `
               <a href="edit.html?id=${content.id}">
                 <i class="fa-solid fa-pen-to-square"></i> edit
               </a>`;
+
+            deletebtn.innerHTML = `<p id="delete-btn"><i class="fa-solid fa-trash"></i> delete</p>`;
+
+            document.getElementById("delete-btn").addEventListener("click", deleteContent);
           }
         }
       } catch (error) {

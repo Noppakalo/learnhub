@@ -39,7 +39,7 @@ const fetchEdit = async () => {
     });
 
     if (!editRes.ok) {
-      const errorData = await createRes.json();
+      const errorData = await editRes.json();
       throw new Error(errorData.message || "การอัพเดทล้มเหลว");
     }
 
